@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require 'json'
 
 wish_list = [
   "画像投稿掲示板",
