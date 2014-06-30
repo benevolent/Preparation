@@ -1,27 +1,28 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'active_record'
 
-wish_list = [
-  "画像投稿掲示板",
-  "Wiki",
-  "YouTubeもどき",
-  "適当なWebAPIを使ったツール",
-  "藤原竜也変換ツール",
-  "突然の死ジェネレーター（マンボウも可）",
-  "Twitterクライアント",
-  "mikutterプラグイン??",
-  "今まで作ったツールのデザインをいい感じにする",
-  "チャットアプリケーション(Rubyで)",
-  "らくがき投稿サイト",
-  "今まで作ったものを他の言語で書きなおしてみる",
-  "ライブラリを使ってミニゲーム"           
-]
+ActiveRecord::Base.establish_connection(
+  "adapter" => "sqlite3",
+  "database" => "./enjoydev.db"
+)
+
+class List < ActiveRecord::Base
+end
 
 get '/' do
-  "今回の開発は #{wish_list.sample} をつくりましょう"
+  @title = 'たのしい開発練習'
+  @list  = List.all.sample
+  erb :index
 end
 
 get '/list' do
-  @list = wish_list
+  @title = 'やることリスト'
+  @list  = List.all
   erb :list
+end
+
+post '/add' do
+  List.create({:title => params[:title], :level => params[:level], :desc => params[:desc]})
+  redirect '/list'
 end
