@@ -17,12 +17,16 @@ get '/' do
 end
 
 get '/list' do
-  @title = 'やることリスト'
+  @title = 'やりたいことリスト'
   @list  = List.all
   erb :list
 end
 
 post '/add' do
   List.create({:title => params[:title], :level => params[:level], :desc => params[:desc]})
+  redirect '/list'
+end
+
+post '/remove' do
   redirect '/list'
 end

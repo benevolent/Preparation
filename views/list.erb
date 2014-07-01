@@ -1,14 +1,17 @@
 <h1>List Page</h1>
+<form method="post" action="/remove">
 <table>
-  <tr><th>Titles</th><th>Level(1~3)</th><th>Delete</th></tr>
+  <tr><th>Titles</th><th>Level(1~3)</th><th>Remove</th></tr>
   <% @list.each do |item| %>
     <tr>
      <td><a href=""><%= item.title %></a></td>
      <td><%= item.level %></td>
-     <td><input type="checkbox"></td>
+     <td><input type="checkbox" name="id"></td>
     </tr>
   <% end %>
+  <tr><td></td><td></td><td><input type="submit" value="Remove"></td></tr>
 </table>
+</form>
 <h2>Add New</h2>
 
 <form method="post" action="/add">
@@ -21,6 +24,6 @@
       <option>3</option>
     </select>
   </p>
-  <p><label>Description</label><br><textarea></textarea></p>
+  <p><label>Description</label><br><textarea name="desc"></textarea></p>
   <input type="submit" value="Add">
 </form>
