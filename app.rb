@@ -12,7 +12,7 @@ end
 
 get '/' do
   @title = 'たのしい開発練習'
-  @list  = List.all.sample
+  @item  = List.all.sample
   erb :index
 end
 
@@ -27,6 +27,14 @@ post '/add' do
   redirect '/list'
 end
 
-post '/remove' do
+post '/delete' do
+  params[:rmv_check].each do |check|
+    List.find(check).destroy
+  end
   redirect '/list'
+end
+
+
+get '/:name' do
+  erb :item
 end
