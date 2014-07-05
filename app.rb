@@ -16,6 +16,7 @@ get '/' do
   erb :index
 end
 
+
 get '/list' do
   @title = 'やりたいことリスト'
   @list  = List.all
@@ -36,5 +37,8 @@ end
 
 
 get '/:name' do
+  @title = "#{params[:name]}"
+  @item = List.find_by_title(params[:name])
+  #ここにタイトルが存在しない時の処理を書く
   erb :item
 end
