@@ -4,9 +4,9 @@
   <tr><th>Titles</th><th>Level(1~3)</th><th>Delete</th></tr>
   <% @list.each do |item| %>
     <tr>
-     <td><a href="<%= item.title %>"><%= item.title %></a></td>
-     <td><%= item.level %></td>
-     <td><input type="checkbox" name="rmv_check[]" value="<%= item.id %>"></td>
+     <td><a href="<%= h item.title %>"><%= h item.title %></a></td>
+     <td><%= h item.level %></td>
+     <td><input type="checkbox" name="rmv_check[]" value="<%= h item.id %>"></td>
     </tr>
   <% end %>
   <tr><td></td><td></td><td><input type="submit" value="Delete"></td></tr>
