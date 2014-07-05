@@ -10,6 +10,11 @@ ActiveRecord::Base.establish_connection(
 class List < ActiveRecord::Base
 end
 
+helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
+end
+
 get '/' do
   @title = 'たのしい開発練習'
   @item  = List.all.sample
@@ -39,6 +44,9 @@ end
 get '/:name' do
   @title = "#{params[:name]}"
   @item = List.find_by_title(params[:name])
+  if @item == nil
+    redirect '/'
+  end
   #ここにタイトルが存在しない時の処理を書く
   erb :item
 end
