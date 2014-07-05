@@ -1,0 +1,55 @@
+body{
+	font-family: "mplus-1p-regular";
+	position: relative;
+	background-color: #87CEFA;
+
+}
+
+.main{
+	margin: 50px;
+	margin-left: 300px;
+	margin-right: 300px;
+	padding: 50px;
+	position: relative;
+	background-color: #FFFFF0;
+	border-radius: 15px;
+}
+
+.main #title{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background-color: #F5DEB3;
+	border-radius: 15px;
+}
+
+.main #detail{
+	position: relative;
+	top: 10px;
+}
+
+.main #link{
+	position: absolute;
+	bottom: 0px;
+}
+
+#link ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#link li{
+	float: left;
+	width: 100px;
+	margin: 0;
+	padding: 0;
+}
+
+#link a{
+	color: black;
+}
+
+#link a:hover{
+	color: red;
+}
