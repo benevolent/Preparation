@@ -1,4 +1,4 @@
-require 'sinatra'
+reqzuire 'sinatra'
 require 'sinatra/reloader'
 require 'active_record'
 
@@ -34,7 +34,7 @@ post '/add' do
 end
 
 post '/delete' do
-  params[:rmv_check].each do |check|
+  params[:delete_check].each do |check|
     List.find(check).destroy
   end
   redirect '/list'
@@ -47,6 +47,5 @@ get '/:name' do
   if @item == nil
     redirect '/'
   end
-  #ここにタイトルが存在しない時の処理を書く
   erb :item
 end
