@@ -1,2 +1,9 @@
 <h1>Display Page</h1>
-<p>今回の開発は <a href="<%= h @item.title %>"><%= h @item.title %></a> をつくりましょう</p>
+<p>
+  <% if @item.empty? %>
+    データを入れろ
+  <% else %>
+    <% @item = @item.sample%>
+    今回の開発は <a href="<%= h @item.title %>"><%= h @item.title %></a> をつくりましょう
+  <% end %>
+ </p>

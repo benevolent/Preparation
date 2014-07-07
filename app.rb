@@ -17,7 +17,8 @@ end
 
 get '/' do
   @title = 'たのしい開発練習'
-  @item  = List.all.sample
+  @item  = List.all
+  #レコードが空の時に例外処理を行う.
   erb :index
 end
 
