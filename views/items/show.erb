@@ -1,0 +1,9 @@
+<h1>Show item page</h1>
+
+<h2><%= h @item.title %><h2>
+<p>Level:<%= h @item.level %></p>
+<pre><%= h @item.description %></pre>
+
+<hr>
+
+<a href="/items/<%= @item.id %>/edit">Edit</a> | <a href="/items">Back</a>

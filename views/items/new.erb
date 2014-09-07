@@ -1,0 +1,17 @@
+<h1>Create new item page</h1>
+
+<form method="post" action="/items/create">
+  <p><label>Title:<input type="text" name="title"></label></p>
+  <p>
+    <label>Level:</label>
+    <select name="level">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  </p>
+  <p><label>Description</label><br><textarea name="description"></textarea></p>
+  <input type="submit" value="Create">
+</form>
+
+<a href="/items">Back</a>

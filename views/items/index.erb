@@ -1,0 +1,26 @@
+<h1>Items page</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Level(1~3)</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.level %></td>
+        <td><a href="/items/<%= item.id %>">Show</a></td>
+        <td><a href="/items/<%= item.id %>/edit">Edit</a></td>
+        <td><a href="/items/<%= item.id %>/destroy">Destroy</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<a href="/items/new">New Item</a>
