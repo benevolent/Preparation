@@ -27,7 +27,7 @@ get '/list' do
 end
 
 post '/add' do
-  List.create({:title => params[:title], :level => params[:level], :desc => params[:desc]})
+  List.create({:title => params[:title], :level => params[:level], :description => params[:description]})
   redirect '/list'
 end
 
