@@ -1,0 +1,4 @@
+{
+  "name": "Preparation",
+  "addons": "heroku-postgresql"
+}
