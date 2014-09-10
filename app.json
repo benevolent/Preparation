@@ -1,0 +1,5 @@
+{
+  "name": "Preparation",
+  "repository": "https://github.com/benevolent/Preparation/tree/migration",
+  "addons": ["heroku-postgresql:hobby-dev"]
+}

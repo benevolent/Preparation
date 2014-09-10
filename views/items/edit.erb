@@ -1,0 +1,17 @@
+<h1>Update item page</h1>
+
+<form method="post" action="/items/<%= @item.id %>/update">
+  <p><label>Title:<input type="text" name="title" value="<%= @item.title %>"></label></p>
+  <p>
+    <label>Level:</label>
+    <select name="level"">
+      <option <% if @item.level == 1 %> selected <% end %>>1</option>
+      <option <% if @item.level == 2 %> selected <% end %>>2</option>
+      <option <% if @item.level == 3 %> selected <% end %>>3</option>
+    </select>
+  </p>
+  <p><label>Description</label><br><textarea name="description"><%= @item.description %></textarea></p>
+  <input type="submit" value="Update">
+</form>
+
+<a href="/items/<%= @item.id %>">Show</a> | <a href="/items">Back</a>

@@ -1,9 +1,9 @@
 <h1>DisplayなPage</h1>
 <p>
-  <% if @item.empty? %>
+  <% if @list.empty? %>
     データを入れろ
   <% else %>
-    <% @item = @item.sample%>
+    <% @item = @list.sample%>
     今回の開発は <a href="<%= h @item.title %>"><%= h @item.title %></a> をつくりましょう
   <% end %>
  </p>
