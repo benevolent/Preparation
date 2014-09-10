@@ -3,4 +3,4 @@ Preparation
 
 Preparation of "Enjoy Development!"
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/benevolent/Preparation/tree/migration)
+<!-- [![Deploy](https://www.herokucdn.com/deploy/button.png)]() -->
